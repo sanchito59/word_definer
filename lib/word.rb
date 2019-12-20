@@ -1,10 +1,10 @@
 class Word
-    attr_reader :name, :id
+    attr_reader :term, :id
     @@words = {}
     @@total_rows = 0
   
-    def initialize(name, id)
-      @name = name
+    def initialize(term, id)
+      @term = term.downcase()
       @id = id || @@total_rows += 1
     end
 
@@ -13,11 +13,11 @@ class Word
     end
 
     def save
-        @@words[self.id] = Word.new(self.name, self.id)
+        @@words[self.id] = Word.new(self.term, self.id)
     end 
 
     def ==(word_to_compare)
-        self.name() == word_to_compare.name()
+        self.term() == word_to_compare.term()
     end
     
     def self.clear
@@ -30,11 +30,11 @@ class Word
     end
 
     def self.sort
-        @@words.values.sort { |a, b| a.name <=> b.name }
+        @@words.values.sort { |a, b| a.term <=> b.term }
     end
 
-    def update(name)
-        @name = (name != '') ? name : @name
+    def update(term)
+        @term = (term != '') ? term : @term
     end
 
     def delete
