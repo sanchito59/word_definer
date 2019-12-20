@@ -23,7 +23,7 @@ describe '#word' do
     end
 
     describe('#==') do
-        it('is the same word if it has the same name as another word') do
+        it('is the same word if it is the same term as another word') do
           word = Word.new('spaghetti', nil)
           word2 = Word.new('spaghetti', nil)
           expect(word).to(eq(word2))
@@ -70,8 +70,8 @@ describe '#word' do
             word2.save()
             word.update('spaghetti')
             word2.update('astronomical')
-          expect(word.name).to(eq('spaghetti'))
-          expect(word2.name).to(eq('astronomical'))
+          expect(word.term).to(eq('spaghetti'))
+          expect(word2.term).to(eq('astronomical'))
         end
       end
 
