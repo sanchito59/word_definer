@@ -32,4 +32,8 @@ class Word
     def self.sort
         @@words.values.sort { |a, b| a.name <=> b.name }
     end
+
+    def update(name)
+        @name = (name != '') ? name : @name
+      end
 end

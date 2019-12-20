@@ -61,4 +61,17 @@ describe '#word' do
           expect(Word.sort()).to(eq([word2, word]))
         end
     end
+
+    describe('#update') do
+        it('updates a word by id') do
+            word = Word.new('spaghetty', nil)
+            word.save()
+            word2 = Word.new('celestial', nil)
+            word2.save()
+            word.update('spaghetti')
+            word2.update('astronomical')
+          expect(word.name).to(eq('spaghetti'))
+          expect(word2.name).to(eq('astronomical'))
+        end
+      end
 end
