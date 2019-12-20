@@ -34,10 +34,19 @@ describe '#word' do
         it('clears all words') do
           word = Word.new('spaghetti', nil)
           word.save()
-          word2 = Word.new('Blue', nil)
+          word2 = Word.new('celestial', nil)
           word2.save()
           Word.clear()
           expect(Word.all).to(eq([]))
         end
       end
+
+      describe(.find) do
+        it('finds a word by id') do
+          word = Word.new('spaghetti', nil)
+          word.save()
+          word2 = Word.new('celestial', nil)
+          word2.save()
+          expect(Album.find(album.id)).to(eq(album))
+          expect(Album.find(album2.id)).to(eq(album2))
 end
