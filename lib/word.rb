@@ -35,5 +35,9 @@ class Word
 
     def update(name)
         @name = (name != '') ? name : @name
-      end
+    end
+
+    def delete
+        @@words.delete(self.id)
+    end
 end
