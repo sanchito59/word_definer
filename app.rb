@@ -26,3 +26,16 @@ post('/words') do
     erb(:words)
 end
 
+get('/words/:id/edit') do
+    @word = Word.find(params[:id].to_i())
+    erb(:edit_word)
+end
+
+patch('/words/:id') do
+    @word = Word.find(params[:id].to_i())
+    values = *params.values
+    @word.update(values[0])
+    @words = Word.sort()
+    erb(:words)
+end
+
