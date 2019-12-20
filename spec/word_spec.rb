@@ -3,9 +3,9 @@ require 'word'
 require 'definition'
 
 describe '#word' do
-    before(:each) do
-      Word.clear()
-    end
+    # before(:each) do
+    #   Word.clear()
+    # end
   
     describe('.all') do
       it('returns an empty array when there are no words') do
@@ -15,9 +15,9 @@ describe '#word' do
   
     describe('#save') do
       it('saves a word') do
-        word = word.new('languid', nil)
+        word = Word.new('languid', nil)
         word.save()
-        word2 = word.new('jovial', nil)
+        word2 = Word.new('jovial', nil)
         word2.save()
         expect(Word.all).to(eq([word, word2]))
       end
