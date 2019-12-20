@@ -5,6 +5,7 @@ require 'definition'
 describe '#word' do
     before(:each) do
       Word.clear()
+      Definition.clear()
     end
   
     describe('.all') do
@@ -84,5 +85,17 @@ describe '#word' do
             word.delete()
             expect(Word.all).to(eq([word2]))
           end
+      end
+      
+      describe('.meanings') do
+        it('finds the word\'s definitions') do
+          word = Word.new('charm', nil)
+          word.save()
+          meaning = Definition.new('the power or quality of giving delight or admiration', word.id, nil)
+          meaning.save()
+          meaning2 = Definition.new('a small ornament worn on a necklace or bracelet', word.id, nil)
+          meaning2.save()
+          expect(word.meanings).to(eq([meaning, meaning2]))
+        end
       end
 end
