@@ -51,4 +51,14 @@ describe '#word' do
           expect(Word.find(word2.id)).to(eq(word2))
         end
     end
+
+    describe('#sort') do
+        it('sorts a list of words alphabetically') do
+          word = Word.new('spaghetti', nil)
+          word.save()
+          word2 = Word.new('celestial', nil)
+          word2.save()
+          expect(Word.sort).to(eq(word2, word))
+        end
+    end
 end
