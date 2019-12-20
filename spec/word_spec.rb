@@ -58,7 +58,7 @@ describe '#word' do
           word.save()
           word2 = Word.new('celestial', nil)
           word2.save()
-          expect(Word.sort).to(eq(word2, word))
+          expect(Word.sort()).to(eq([word2, word]))
         end
     end
 end

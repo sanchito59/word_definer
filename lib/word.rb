@@ -28,4 +28,8 @@ class Word
     def self.find(id)
         @@words[id]
     end
+
+    def self.sort
+        @@words.values.sort { |a, b| a.name <=> b.name }
+    end
 end
