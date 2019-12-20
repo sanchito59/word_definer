@@ -41,4 +41,14 @@ class Definition
       def delete
         @@definitions.delete(self.id)
       end
+
+      def self.find_by_word(term_id)
+        meanings = []
+        @@definitions.values.each do |meaning|
+          if meaning.word_id == term_id
+            meanings.push(meaning)
+          end
+        end
+        meanings
+      end
 end

@@ -76,4 +76,16 @@ describe '#definition' do
           expect(Definition.all).to(eq([meaning2]))
         end
       end
+      describe('.find_by_word') do
+          it('finds definitions for a word') do
+            word2 = Word.new('apple', nil)
+            word2.save
+            meaning = Definition.new('the power or quality of giving delight or admiration', @word.id, nil)
+            meaning.save()
+            meaning2 = Definition.new('a sinful fruit', word2.id, nil)
+            meaning2.save()
+            expect(Definition.find_by_word(@word.id)).to(eq([meaning]))
+            expect(Definition.find_by_word(word2.id)).to(eq([meaning2]))
+          end
+      end
 end
