@@ -9,6 +9,11 @@ get('/') do
     erb(:words)
 end
 
+get('/words') do
+    @words = Word.sort
+    erb(:words)
+end
+
 get('/word/new') do
     erb(:new_word)
 end
@@ -34,8 +39,14 @@ end
 patch('/words/:id') do
     @word = Word.find(params[:id].to_i())
     values = *params.values
-    @word.update(values[0])
+    @word.update(values[1])
     @words = Word.sort()
     erb(:words)
 end
 
+delete('/words/:id') do
+    @word = Word.find(params[:id].to_i())
+    @word.delete()
+    @words = Word.sort()
+    erb(:words)
+end
