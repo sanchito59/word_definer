@@ -10,7 +10,6 @@ get('/') do
 end
 
 get('/word/new') do
-    "Hello World"
     erb(:new_word)
 end
 
