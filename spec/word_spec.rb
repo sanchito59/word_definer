@@ -74,4 +74,15 @@ describe '#word' do
           expect(word2.name).to(eq('astronomical'))
         end
       end
+
+      describe('.delete') do
+          it('deletes a word based on its ID') do
+            word = Word.new('spaghetti', nil)
+            word.save()
+            word2 = Word.new('celestial', nil)
+            word2.save()
+            word.delete()
+            expect(Word.all).to(eq([word2]))
+          end
+      end
 end
