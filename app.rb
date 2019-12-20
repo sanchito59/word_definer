@@ -65,3 +65,17 @@ post('/words/:id/definitions') do
     definition.save()
     erb(:word)
 end
+
+patch('/words/:id/definitions/:word_id')do
+    @word = Word.find(params[:id].to_i())
+    definition = Definition.find(params[:word_id].to_i())
+    definition.update(params[:definition], @word.id)
+    erb(:word)  
+end
+
+delete('/words/:id/definitions/:word_id') do
+    definition = Definition.find(params[:word_id].to_i())
+    definition.delete()
+    @word = Word.find(params[:id].to_i())
+    erb(:word)  
+end

@@ -8,12 +8,12 @@
   <br>
   <input id="definition" name="definition" type="text">
   <br>
-  <button class='btn btn-info' type="submit">Update definition</button>
+  <button class='btn btn-info' type="submit">Update</button>
 </form>
 <br>
 <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
-  <button class='btn btn-info' type="submit">Delete definition</button>
+  <button class='btn btn-info' type="submit">Delete</button>
 </form>
 <br>
 <a href="/words/<%= @definition.word.id %>">Back to '<%= @definition.word.term %>'</a>
