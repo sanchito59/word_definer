@@ -3,3 +3,6 @@ body {
     color: whitesmoke;
 }
 
+a:hover {
+    color: white;
+}
