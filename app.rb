@@ -50,3 +50,18 @@ delete('/words/:id') do
     @words = Word.sort()
     erb(:words)
 end
+
+# Definition Routes
+
+get('/words/:id/definitions/:word_id') do
+    @word = Word.find(params[:id].to_i())
+    @definition = Definition.find(params[:word_id].to_i())
+    erb(:definitions)
+end
+
+post('/words/:id/definitions') do
+    @word = Word.find(params[:id].to_i())
+    definition = Definition.new(params[:definition], @word.id, nil)
+    definition.save()
+    erb(:word)
+end
