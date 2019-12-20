@@ -1,2 +1,30 @@
 class Definition
+    attr_reader :id
+    attr_accessor :meaning, :word_id
+
+    @@definitions = {}
+    @@total_rows = 0
+
+    def initialize(meaning, word_id, id)
+      @meaning = meaning
+      @word_id = word_id
+      @id = id || @@total_rows += 1
+    end
+
+    def ==(definitions_to_compare)
+      (self.meaning() == definitions_to_compare.meaning()) && (self.word_id() == definitions_to_compare.word_id())
+    end
+
+    def self.all
+      @@definitions.values
+    end
+
+    def self.clear
+        @@definitions = {}
+        @@total_rows = 0
+    end
+
+    def save
+        @@definitions[self.id] = Definition.new(self.meaning, self.word_id, self.id)
+    end
 end
