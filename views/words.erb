@@ -4,11 +4,11 @@
 <div class='page_content'>
   <h3>Word Catalogue: </h3>
   <% if @words.any? %>
-  <ul>
+  <ol>
     <% @words.each do |word| %>
-    <li><a href="/words/<%= word.id %>"><%= word.term %></a></li>
+    <li><a class="highlight_word" href="/words/<%= word.id %>"><%= word.term %></a></li>
     <% end %>
-  </ul>
+  </ol>
   <% else %>
   <p>You haven't added any words yet. Click below to get started!</p>
   <% end %>

@@ -2,12 +2,13 @@
   <h1>Word Definer</h1>
 </div>
 <div class="page_content">
-    <h1> Update: <%= @word.term %> </h1>
+    <h1> Update: <span class="highlight_word"><%= @word.term %></span></h1>
     <form action='/words/<%= @word.id %>' method='post'>
         <input name='_method' type='hidden' value='patch'>
         <div class='form-group'>
             <label for='term'>Change word:</label>
-            <input id='term' name='term' type='text'>
+            <br>
+            <input id='term' class="form_input" name='term' type='text'>
         </div>
         <button class='btn btn-info' type='submit'>Update Word</button>
     </form>
