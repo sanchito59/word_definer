@@ -2,11 +2,11 @@
 
 <h3>Definitions: </h3>
   <% if @word.meanings %>
-    <ul>
+    <ol>
       <% @word.meanings.each do |definition| %>
         <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.meaning %></a></li>
       <% end %>
-    </ul>
+    </ol>
   <% else %>
     <p>There are no definitions listed for this word yet.</p>
   <% end %>
