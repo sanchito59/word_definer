@@ -1,6 +1,25 @@
 body {
-    background-color: darkslateblue;
+    background-color: rgb(63, 72, 204);
     color: whitesmoke;
+}
+
+#header {
+    background-color: rgb(64, 231, 185);
+    padding: 12.5px;
+    position: relative;
+    width: 100%;
+}
+
+.page_content {
+    max-width: 70%;
+    min-width: 20%;
+    padding-top: 35px;
+    margin: 0 auto;
+}
+
+a {
+    color: rgb(246,195,72);
+    text-decoration: underline;
 }
 
 a:hover {
