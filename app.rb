@@ -10,7 +10,11 @@ get('/') do
 end
 
 get('/words') do
-    @words = Word.sort
+    if params["search"]
+        @words = Word.search(params[:search])
+    else
+        @words = Word.sort
+    end
     erb(:words)
 end
 

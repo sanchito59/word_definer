@@ -55,3 +55,7 @@ a:hover {
 .form_input:focus{
     outline: none;
 }
+
+#show_all_button {
+    text-decoration: none;
+}

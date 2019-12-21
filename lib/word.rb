@@ -43,6 +43,10 @@ class Word
         @@words.delete(self.id)
     end
 
+    def self.search(search_term)
+        @@words.values.select { |word| word.term =~ /#{search_term}/i }
+     end
+
     def meanings
         Definition.find_by_word(self.id)
     end
