@@ -1,24 +1,29 @@
-<h2>Word: <%= @word.term %></h2>
+<div id='header'>
+  <h1>Word Definer</h1>
+</div>
+<div class="page_content">
+  <h2>Word: <%= @word.term %></h2>
 
-<h3>Definitions: </h3>
-  <% if @word.meanings %>
-    <ol>
-      <% @word.meanings.each do |definition| %>
-        <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.meaning %></a></li>
-      <% end %>
-    </ol>
-  <% else %>
-    <p>There are no definitions listed for this word yet.</p>
-  <% end %>
+  <h3>Definitions: </h3>
+    <% if @word.meanings %>
+      <ol>
+        <% @word.meanings.each do |definition| %>
+          <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.meaning %></a></li>
+        <% end %>
+      </ol>
+    <% else %>
+      <p>There are no definitions listed for this word yet.</p>
+    <% end %>
 
-<h4>Add a definition:</h4>
+  <h4>Add a definition:</h4>
 
-<form action="/words/<%= @word.id %>/definitions" method="post">
-  <div class="form-group">
-    <input id="definition" name="definition" class="form-control" type="text">
-  </div>
-  <button type="submit" class="btn btn-info">Add definition</button>
-</form>
+  <form action="/words/<%= @word.id %>/definitions" method="post">
+    <div class="form-group">
+      <input id="definition" name="definition" class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn btn-info">Add definition</button>
+  </form>
 
-<p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
-<p><a href="/words">Return to word list</a></p>
+  <p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
+  <p><a href="/words">Return to word list</a></p>
+</div>

@@ -1,10 +1,15 @@
-<h1>Add a new word</h1>
+<div id='header'>
+  <h1>Word Definer</h1>
+</div>
+<div class="page_content">
+  <h1>Add a new word</h1>
 
-<form action="/words" method="post">
-  <div class="form-group">
-    <label for="word">Word: </label>
-    <input id="n" name="word" class="form-control" type="text">
-  </div>
-  <button type="submit" class="btn btn-info">Enter!</button> 
-  <%# add array of 'submit' synonyms to .sample for the 'Enter!' text %>
-</form>
+  <form action="/words" method="post">
+    <div class="form-group">
+      <label for="word">Word: </label>
+      <input id="n" name="word" class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn btn-info">Enter!</button> 
+    <%# add array of 'submit' synonyms to .sample for the 'Enter!' text %>
+  </form>
+</div>
