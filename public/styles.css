@@ -1,13 +1,30 @@
 body {
     background-color: rgb(63, 72, 204);
     color: whitesmoke;
+    font-family: 'Dosis', sans-serif;
 }
 
+/* font-family: 'Dosis', sans-serif;
+font-family: 'Acme', sans-serif;
+font-family: 'Amatic SC', cursive;
+font-family: 'Permanent Marker', cursive; */
+
 #header {
-    background-color: rgb(64, 231, 185);
+    font-family: 'Acme', cursive;
+    background-color: rgb(246,195,72);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(19, 92, 71);
     padding: 12.5px;
     position: relative;
     width: 100%;
+}
+
+.highlight_word {
+    color: rgb(64,231,185);
+}
+
+.highlight_definition {
+    color: rgb(234,79,94);
 }
 
 .page_content {
@@ -24,4 +41,17 @@ a {
 
 a:hover {
     color: white;
+}
+
+.form_input {
+    padding-top: 0px;
+    padding-left: 0px;
+    line-height: 1em;
+    width: 70%;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.form_input:focus{
+    outline: none;
 }
