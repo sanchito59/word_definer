@@ -1,6 +1,6 @@
 <h1> Update: <%= @word.term %> </h1>
 
-<form action='/words/ <%= @word.id %>' method='post'>
+<form action='/words/<%= @word.id %>' method='post'>
     <input name='_method' type='hidden' value='patch'>
     <div class='form-group'>
         <label for='term'>Change word:</label>
