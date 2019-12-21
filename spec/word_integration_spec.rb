@@ -46,13 +46,13 @@ describe('Integration Test') do
         it('will navigate to the update definition page and change the definition') do
             word = Word.new("apple", nil)
             word.save
-            definition = Definition.new("definition", word.id, nil)
+            definition = Definition.new("pizza", word.id, nil)
             definition.save
-            visit("/words/#{word.id}/definitions/#{word.id}")
-            click_on('definition')
-            fill_in('definition', with => 'new definition')
+            visit("/words/#{word.id}")
+            click_on('pizza')
+            fill_in('definition', :with => 'calzone')
             click_on('Update')
-            expect(page).to have_content("apple" && "new definition")
+            expect(page).to have_content("calzone")
         end
     end
 
@@ -71,11 +71,11 @@ describe('Integration Test') do
         it('will navigate to the update word page and delete the word') do
             word = Word.new("apple", nil)
             word.save
-            definition = Definition.new("definition", word.id, nil)
+            definition = Definition.new("pizza", word.id, nil)
             definition.save
             visit("/words/#{word.id}/definitions/#{word.id}")
             click_on('Delete')
-            expect(page).not_to have_content("definition")
+            expect(page).not_to have_content("pizza")
         end
     end
 end
