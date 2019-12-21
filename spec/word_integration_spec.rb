@@ -24,9 +24,9 @@ describe('Integration Test') do
         word = Word.new("apple", nil)
         word.save
         visit("/words/#{word.id}")
-        fill_in('definition', :with => 'a sinful fruit')
+        fill_in('definition', :with => "definition")
         click_on('Add definition')
-        expect(page).to have_content('a sinful fruit')
+        expect(page).to have_content("definition")
         end
     end
 
@@ -39,6 +39,20 @@ describe('Integration Test') do
             fill_in('term', :with => 'peach')
             click_on('Update Word')
             expect(page).to have_content('peach')
+        end
+    end
+
+    describe('Update \'definition\' path', {:type => :feature}) do
+        it('will navigate to the update definition page and change the definition') do
+            word = Word.new("apple", nil)
+            word.save
+            definition = Definition.new("definition", word.id, nil)
+            definition.save
+            visit("/words/#{word.id}/definitions/#{word.id}")
+            click_on('definition')
+            fill_in('definition', with => 'new definition')
+            click_on('Update')
+            expect(page).to have_content("apple" && "new definition")
         end
     end
 
@@ -57,11 +71,11 @@ describe('Integration Test') do
         it('will navigate to the update word page and delete the word') do
             word = Word.new("apple", nil)
             word.save
-            definition = Definition.new('a sinful fruit', word.id, nil)
+            definition = Definition.new("definition", word.id, nil)
             definition.save
             visit("/words/#{word.id}/definitions/#{word.id}")
             click_on('Delete')
-            expect(page).not_to have_content('a sinful fruit')
+            expect(page).not_to have_content("definition")
         end
     end
 end
