@@ -6,12 +6,12 @@
         <label for='term'>Change word:</label>
         <input id='term' name='term' type='text'>
         </div>
-        <button class='btn btn-info' type='submit'>Update</button>
+        <button class='btn btn-info' type='submit'>Update Word</button>
         </form>
         <br>
         <form action='/words/<%= @word.id %>' method='post'>
             <input name='_method' type='hidden' value='delete'>
-            <button class='btn btn-info' type='submit'>Delete</button>
+            <button class='btn btn-info' type='submit'>Delete Word</button>
         </form>
         <br>
         <p><a href='/words'>Return to words</a></p>
