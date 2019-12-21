@@ -2,7 +2,7 @@
 
 ## By **Chris Sanchez**
 
-The Word Definer is a CRUD (Create, Read, Update, Delete) application to supplement literacy education by allowing users to add words that they may not know the definition of to a catalogue. Users can update the word's definition or add multiple definitions to words within the catalogue.
+The [Word Definer](https://warm-brushlands-74758.herokuapp.com/) is a CRUD (Create, Read, Update, Delete) application to supplement literacy education by allowing users to add words that they may not know the definition of to a catalogue. Users can update the word's definition or add multiple definitions to words within the catalogue.
 - - - -
 ### Setup/Installation Requirements
 
@@ -34,8 +34,8 @@ The Word Definer is a CRUD (Create, Read, Update, Delete) application to supplem
 |(Read/GET)|User is on the homepage. |Homepage displays a list of all the words, or if there aren't any: 'You haven't added any words yet. Click below to get started!'|
 |(Create/POST) User adds a word to the catalogue of words. |'languid'|'displaying or having a disinclination for physical exertion or effort; slow and relaxed.'|
 |(Update/PATCH) User changes or adds definitions to a word. |'weak or faint from illness or fatigue.'|1. 'displaying or having a disinclination for physical exertion or effort; slow and relaxed.' 2. 'weak or faint from illness or fatigue.'|
-|(Delete/DELETE)|The user deletes a defition they no longer want. |'weak or faint from illness or fatigue.'|
-|(Delete/DELETE)|The user deletes a defition they no longer want. |'languid'|'You haven't added any words yet. Click below to get started!'|
+|(Delete/DELETE)|The user deletes a definition they no longer want. |'weak or faint from illness or fatigue.'|
+|(Delete/DELETE)|The user deletes a word they no longer want. |'languid'|'You haven't added any words yet. Click below to get started!'|
 - - - -
 
 ### Technologies Used
